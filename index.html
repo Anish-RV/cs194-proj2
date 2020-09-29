@@ -1,0 +1,174 @@
+<h1 id="proj-2-anish-vankayalapati-">Proj 2 (Anish Vankayalapati)</h1>
+<h2 id="part-1-fun-with-filters">Part 1: Fun with Filters</h2>
+<h3 id="1-1-finite-difference-operator">1.1: Finite Difference Operator</h3>
+<p>I used the given values for <em>Dx</em> and <em>Dy</em> to calculate the respective partial derivatives in x and y by convolving with
+the given cameraman image. Then I combined the derivatives by computing their magnitude to form the gradient magnitude image.</p>
+<h4 id="dy">dy</h4>
+<p><img src="output_9_0.png" alt="*dy*"> </p>
+<h4 id="dx">dx</h4>
+<p><img src="output_9_1.png" alt="png"> </p>
+<h4 id="gradient-magnitude-image">gradient magnitude image</h4>
+<p><img src="output_10_1.png" alt="png"></p>
+<h4 id="binarized-gradient-magnitude-image">binarized gradient magnitude image</h4>
+<p><img src="output_11_0.png" alt="png"></p>
+<h3 id="1-2-derivative-of-gaussian-dog-filter">1.2: Derivative of Gaussian (DoG) filter</h3>
+<p>Using a size of 31 and sigma of 5, I made a Gaussian filter to blur the image and then repeated the procedure from <strong>1.1</strong>. Since blurring
+the image smoothens out the image, the result is a lot smoother and cleaner than previously but due to the blurring, the outline is much thicker than in
+the previous result.</p>
+<h4 id="dy">dy</h4>
+<p><img src="output_13_0.png" alt="png"> </p>
+<h4 id="dx">dx</h4>
+<p><img src="output_13_1.png" alt="png"> </p>
+<h4 id="gradient-magnitude-image">gradient magnitude image</h4>
+<p><img src="output_14_1.png" alt="png"></p>
+<h4 id="binarized-gradient-magnitude-image">binarized gradient magnitude image</h4>
+<p><img src="output_15_0.png" alt="png"></p>
+<h3 id="1-3-image-straightening">1.3: Image Straightening</h3>
+<p>The 1st image I used was the facade image.</p>
+<h4 id="original-image">Original Image</h4>
+<p><img src="output_16_0.png" alt="png"></p>
+<p>The best rotation angle was determined to be <strong>-4 degrees</strong>.</p>
+<h4 id="straightened-image">Straightened Image</h4>
+<p><img src="output_20_3.png" alt="png"></p>
+<h4 id="angle-histogram-angles-in-radians-">Angle Histogram (angles in radians)</h4>
+<p><img src="output_21_1.png" alt="png"></p>
+<p>2nd image I used is of a cat slanting on a sofa (<strong>Failure Case</strong>).
+`</p>
+<h4 id="original-image">Original Image</h4>
+<p><img src="output_22_0.png" alt="png"></p>
+<p>The best rotation angle was determined to be <strong>8 degrees</strong>.</p>
+<h4 id="straightened-image">Straightened Image</h4>
+<p><img src="slanted_cat_straight.jpg" alt="jpg"></p>
+<h4 id="angle-histogram-angles-in-radians-">Angle Histogram (angles in radians)</h4>
+<p><img src="output_24_1.png" alt="png"></p>
+<p>This image didn&#39;t work very well since the algorithm thinks the cat should be slanted further in the wrong direction. This may be
+due to the cropped nature of the image, where the cat takes up most of the photo. This would make it difficult for the algorithm to detect
+where the edges are.</p>
+<p>3rd image I used is of Leaning Tower of Pisa
+`</p>
+<h4 id="original-image">Original Image</h4>
+<p><img src="output_25_0.png" alt="png"></p>
+<p>The best rotation angle was determined to be <strong>5 degrees</strong>.</p>
+<h4 id="straightened-image">Straightened Image</h4>
+<p><img src="pisa_straight.jpg" alt="jpg"></p>
+<h4 id="angle-histogram-angles-in-radians-">Angle Histogram (angles in radians)</h4>
+<p><img src="output_27_1.png" alt="png"></p>
+<p>4th image I used is of a tilted building on a street
+`</p>
+<h4 id="original-image">Original Image</h4>
+<p><img src="output_28_0.png" alt="png"></p>
+<p>The best rotation angle was determined to be <strong>-5 degrees</strong>.</p>
+<h4 id="straightened-image">Straightened Image</h4>
+<p><img src="building_straight.jpg" alt="jpg"></p>
+<h4 id="angle-histogram-angles-in-radians-">Angle Histogram (angles in radians)</h4>
+<p><img src="output_30_1.png" alt="png"></p>
+<h2 id="part-2-fun-with-frequencies-">Part 2: Fun with Frequencies!</h2>
+<h3 id="2-1-image-sharpening">2.1: Image Sharpening</h3>
+<p>1st image I used was the Taj Mahal image given as an example. </p>
+<h4 id="original-image">Original Image</h4>
+<p><img src="taj.jpg" alt="jpg"></p>
+<h4 id="sharpened-image">Sharpened Image</h4>
+<p><img src="taj_sharp.jpg" alt="jpg"></p>
+<p>In the above image, the black inscriptions in the center, as well as the renovation structure on the left, are significantly sharper. </p>
+<p>2nd image I used was of an image of a black swan I took in Spain.</p>
+<h4 id="original-image">Original Image</h4>
+<p><img src="swan.jpg" alt="jpg"></p>
+<h4 id="sharpened-image">Sharpened Image</h4>
+<p><img src="swan_sharp.jpg" alt="jpg"></p>
+<p>Since the image is already pretty high quality, the sharpening isn&#39;t very evident. However, the curve around its neck as well as its beak have been somewhat sharpened further due to this algorithm.</p>
+<p>Using this sharpened image, I blurred it and sharpened it again to compare it with the original sharpened image.</p>
+<h4 id="blurred-then-sharpened-image">Blurred then sharpened image</h4>
+<p><img src="swan_blur_sharp.jpg" alt="jpg"></p>
+<p>Here, the head of the swan is blurrier in the final image than the initial sharp image. Since the sharpening effect doesn&#39;t actually add new information to
+the image, but rather accentuates existing features, blurring and then sharpening it serves to reduce the sharpening effect.</p>
+<h3 id="2-2-hybrid-images">2.2: Hybrid Images</h3>
+<p>I started by using the sample images of Derek and his cat, Nutmeg</p>
+<h4 id="derek">Derek</h4>
+<p><img src="DerekPicture.jpg" alt="jpg"></p>
+<h4 id="nutmeg">Nutmeg</h4>
+<p><img src="nutmeg.jpg" alt="jpg"></p>
+<p>I aligned both of the images based on nutmeg and then created the hybrid image using low-pass with <code>cutoff=4</code> for Derek and high-pass with <code>cutoff=7</code>
+for nutmeg.</p>
+<h4 id="hybrid-derek-nutmeg-image">Hybrid Derek-Nutmeg image</h4>
+<p><img src="derek_nutmeg_hybrid.jpg" alt="jpg"></p>
+<p>I also calculated the log magnitudes of the Fourier transform of these images:</p>
+<h4 id="ft-for-derek">FT for Derek</h4>
+<p><img src="output_42_2.png" alt="png"></p>
+<h4 id="ft-for-nutmeg">FT for Nutmeg</h4>
+<p><img src="output_43_2.png" alt="png"></p>
+<h4 id="ft-for-derek-low-pass">FT for Derek low-pass</h4>
+<p><img src="output_44_2.png" alt="png"></p>
+<h4 id="ft-for-nutmeg-high-pass">FT for Nutmeg high-pass</h4>
+<p><img src="output_45_2.png" alt="png"></p>
+<h4 id="ft-for-derek-nutmeg-hybrid">FT for Derek-Nutmeg hybrid</h4>
+<p><img src="output_46_2.png" alt="png"></p>
+<p>Next, I tried to make a hybrid from 2 pictures of myself, 1 when I was happy and 1 when I was sad</p>
+<h4 id="happy-anish">Happy Anish</h4>
+<p><img src="anish_happy.jpg" alt="jpg"></p>
+<h4 id="sad-anish">Sad Anish</h4>
+<p><img src="anish_sad.jpg" alt="jpg"></p>
+<h4 id="hybrid-anish-happy-sad">Hybrid Anish Happy + Sad</h4>
+<p><img src="anish_sad_happy_hybrid.jpg" alt="jpg"></p>
+<p>This hybrid did not work very well because there was only a small but significant difference between the images, my teeth, due to which the algorithm
+was unable to merge my teeth into the hybrid image without the output looking weird.</p>
+<p>Next, I tried to make a hybrid between a young man and an old man.</p>
+<h4 id="old-man">Old man</h4>
+<p><img src="old_man.jpg" alt="jpg"></p>
+<h4 id="young-man">Young man</h4>
+<p><img src="young_man.jpg" alt="jpg"></p>
+<h4 id="hybrid-old-young-man">Hybrid old+young man</h4>
+<p><img src="old_young_man_hybrid.jpg" alt="jpg"></p>
+<h4 id="bells-whistles">Bells &amp; Whistles</h4>
+<p>I used color in all of my hybrid images above. In general, I noticed that color works better in the low-pass filters (like in Derek) because it seems to retain that color better than in the high-pass images.</p>
+<h3 id="2-3-gaussian-and-laplacian-stacks">2.3: Gaussian and Laplacian Stacks</h3>
+<p>1st image I used was the Lincoln image given as an example</p>
+<h4 id="lincoln-with-gaussian-stack">Lincoln with Gaussian stack</h4>
+<p><img src="lincoln_gaus_stack.jpg" alt="jpg"></p>
+<h4 id="lincoln-with-laplacian-stack">Lincoln with Laplacian stack</h4>
+<p><img src="lincoln_lap_stack.jpg" alt="jpg"></p>
+<p>Next, I checked the Gaussian and Laplacian stacks for the hybrid image of myself.</p>
+<h4 id="anish-hybrid-with-gaussian-stack">Anish Hybrid with Gaussian Stack</h4>
+<p><img src="anish_hybrid_gaus_stack.jpg" alt="jpg"></p>
+<h4 id="anish-hybrid-with-laplacian-stack">Anish Hybrid with Laplacian stack</h4>
+<p><img src="anish_hybrid_lap_stack.jpg" alt="png"></p>
+<p>The laplacian stack here is very dim with only my glasses somewhat visible. This may be because the image is a closeup, due to which there are not
+a lot of edges that would show up.</p>
+<h3 id="2-4-multiresolution-blending">2.4: Multiresolution blending</h3>
+<p>First, I started by making the <code>oraple</code> image by blending the apple and orange.</p>
+<h4 id="apple">Apple</h4>
+<p><img src="spline/apple.jpeg" alt="jpg"></p>
+<h4 id="orange">Orange</h4>
+<p><img src="spline/orange.jpeg" alt="jpg"></p>
+<h4 id="mask">Mask</h4>
+<p><img src="black_white.jpg" alt="jpg"></p>
+<h4 id="oraple">Oraple</h4>
+<p><img src="oraple.jpg" alt="jpg"></p>
+<p>Next, I blended a picture of the moon at night with a beach during the day.</p>
+<h4 id="moon">Moon</h4>
+<p><img src="moon_left.jpg" alt="jpg"></p>
+<h4 id="beach">Beach</h4>
+<p><img src="beach.jpg" alt="jpg"></p>
+<h4 id="irregular-mask">Irregular mask</h4>
+<p><img src="moon_mask.png" alt="png"></p>
+<h4 id="moon-beach">Moon + beach</h4>
+<p><img src="moon_beach.jpg" alt="jpg"></p>
+<p>Lastly, I blended a picture of the sun during the day with an image of water at night</p>
+<h4 id="sun">Sun</h4>
+<p><img src="sun_left.jpg" alt="jpg"></p>
+<h4 id="dark-water">Dark water</h4>
+<p><img src="dark_water.jpg" alt="jpg"></p>
+<h4 id="irregular-mask">Irregular mask</h4>
+<p><img src="moon_mask.png" alt="png"></p>
+<h4 id="sun-water">Sun + water</h4>
+<p><img src="sun_water.jpg" alt="jpg"></p>
+<p>I also applied the Laplacian stack to these images</p>
+<h4 id="sun-laplacian">Sun Laplacian</h4>
+<p><img src="sun_lap.jpg" alt="jpg"></p>
+<h4 id="dark-water-laplacian">Dark water Laplacian</h4>
+<p><img src="water_lap.jpg" alt="jpg"></p>
+<h4 id="sun-water-laplacian">Sun + Water Laplacian</h4>
+<p><img src="sun_water_lap.jpg" alt="jpg"></p>
+<h4 id="bells-and-whistles">Bells and Whistles</h4>
+<p>I used color in all the images above to enhance the effect. In general, the color made the blended images look a lot cleaner and believable whereas grayscale images were harder to distinguish and understand.</p>
+<h3 id="coolest-thing">Coolest Thing</h3>
+<p>The coolest thing I learned was that blending requires using a mask to tell the algorithm which parts of each image you want to keep. This mask could be used to make some really cool images so I hope to have fun with this when I have more time, perhaps during winter break.</p>
